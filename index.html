@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenflow - Freedom From Enlarged Prostate Issues</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Zenflow Brand Colors & Variables */
+        :root {
+            --zenflow-teal: #00c0ef;
+            --zenflow-blue: #3c8dbc;
+            --zenflow-dark-blue: #2c5f7f;
+            --zenflow-light-teal: #4dd0e1;
+            --zenflow-mint: #e0f7fa;
+            --text-dark: #1a365d;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+            --light-gray: #f7fafc;
+            --border-light: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --gradient-zenflow: linear-gradient(135deg, var(--zenflow-blue) 0%, var(--zenflow-teal) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--zenflow-teal);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--zenflow-teal);
+        }
+
+        .cta-button {
+            background: var(--gradient-zenflow);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--zenflow-mint) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--zenflow-teal);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+
+        .btn-primary {
+            background: var(--gradient-zenflow);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--zenflow-blue);
+            padding: 1rem 2rem;
+            border: 2px solid var(--zenflow-blue);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--zenflow-blue);
+            color: var(--white);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1s forwards;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--zenflow-teal);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: var(--text-medium);
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .solution-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .solution-content p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--zenflow-teal);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-zenflow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .benefit-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .benefit-description {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--zenflow-mint);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-zenflow);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: var(--text-dark);
+        }
+
+        /* Patient Stories */
+        .patient-stories {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--text-medium);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-zenflow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: var(--gradient-zenflow);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--zenflow-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--zenflow-teal);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--zenflow-teal);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Zenflow</a>
+            <nav class="nav-menu">
+                <a href="#problem" class="nav-link">The Problem</a>
+                <a href="#solution" class="nav-link">Our Solution</a>
+                <a href="#benefits" class="nav-link">Benefits</a>
+                <a href="#stories" class="nav-link">Patient Stories</a>
+                <a href="#contact" class="cta-button">Find a Doctor</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">✨ Now Available - FDA Approved</div>
+            <h1 class="hero-title">
+                Enlarged prostate issues?<br>
+                Let's do better than<br>
+                <span style="color: var(--zenflow-teal);">"just cope with it"</span>
+            </h1>
+            <p class="hero-subtitle">
+                The Zenflow Spring System offers a gentler approach to BPH treatment. 
+                No burning, cutting, or piercing. Most patients recover in hours, not weeks.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Find a Doctor Near You</a>
+                <a href="#solution" class="btn-secondary">Learn How It Works</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-grandfather.jpeg" alt="Happy grandfather with grandson enjoying outdoor activities - representing active life after BPH treatment" style="width: 100%; max-width: 600px; height: auto; border-radius: 15px; box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section fade-in-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">You're Not Alone in This</h2>
+                <p class="section-subtitle">
+                    Benign Prostatic Hyperplasia (BPH) affects millions of men, but many suffer in silence. 
+                    Current treatments often come with unwanted side effects and lengthy recoveries.
+                </p>
+            </div>
+            
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <span class="stat-number">50%</span>
+                    <p class="stat-label">of men over 50 have BPH symptoms</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">90%</span>
+                    <p class="stat-label">of men over 80 experience BPH</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">40M+</span>
+                    <p class="stat-label">men in the US seeking better treatment</p>
+                </div>
+            </div>
+            
+            <div style="background: var(--zenflow-mint); padding: 2rem; border-radius: 15px; text-align: center;">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Common BPH Symptoms</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                    <div>• Frequent urination</div>
+                    <div>• Weak urine stream</div>
+                    <div>• Difficulty starting urination</div>
+                    <div>• Waking up at night to urinate</div>
+                    <div>• Feeling like bladder isn't empty</div>
+                    <div>• Urgency to urinate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section fade-in-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">A Better Way to Treat BPH</h2>
+                <p class="section-subtitle">
+                    The Zenflow Spring System represents a breakthrough in BPH treatment, 
+                    designed with patient comfort and recovery in mind.
+                </p>
+            </div>
+            
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h3>Gentle by Design</h3>
+                    <p>
+                        Unlike traditional treatments that burn, cut, or pierce tissue, 
+                        the Zenflow Spring System gently opens the blocked pathway with 
+                        minimal tissue damage and bleeding.
+                    </p>
+                    <p>
+                        Our small nitinol spring implant is deployed through a flexible 
+                        cystoscope right in your urologist's office, providing immediate 
+                        relief with maximum comfort.
+                    </p>
+                    
+                    <!-- Spring Device Image -->
+                    <div style="margin: 2rem 0; text-align: center;">
+                        <img src="src="images/spring-device.jpeg"" alt="Zenflow Spring System nitinol device components showing the elegant curved design" style="max-width: 100%; height: auto; background: white; padding: 1rem; border-radius: 10px; box-shadow: var(--shadow-sm);">
+                    </div>
+                </div>
+                <div class="solution-image">
+                    <img src="src="images/spring-illustration.jpeg" alt="Zenflow Spring System medical illustration showing how the nitinol spring opens the blocked urethral pathway" style="width: 100%; height: auto; border-radius: 15px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section fade-in-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">How Zenflow is Different</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕊️</div>
+                    <h3 class="benefit-title">Gentle</h3>
+                    <p class="benefit-description">
+                        No burning, cutting, or piercing of tissue with minimal bleeding. 
+                        The spring gently opens the pathway without damaging surrounding tissue.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Effective</h3>
+                    <p class="benefit-description">
+                        Clinical studies show long-term benefits and lasting symptom relief. 
+                        Most patients experience significant improvement in urinary flow.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Fast Recovery</h3>
+                    <p class="benefit-description">
+                        Most patients recover within hours, not weeks. Return to normal 
+                        activities quickly without the lengthy downtime of traditional surgery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works fade-in-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">How the Zenflow Procedure Works</h2>
+                <p class="section-subtitle">
+                    A simple, office-based procedure that takes less than an hour
+                </p>
+            </div>
+            
+            <!-- Clinical Development Timeline -->
+            <div style="margin: 3rem 0; text-align: center;">
+                <img src="image/clinical-phases.jpeg" alt="Zenflow clinical trial phases - Phase I Feasibility Study, Phase II Pilot Studies, Phase III Pivotal IDE Trial" style="max-width: 100%; height: auto; border-radius: 10px;">
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Consultation</h3>
+                    <p>Meet with your urologist to discuss your symptoms and determine if Zenflow is right for you.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Procedure</h3>
+                    <p>The spring is gently deployed through a flexible scope in your doctor's office under local anesthesia.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Recovery</h3>
+                    <p>Most patients go home the same day and return to normal activities within hours to days.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Relief</h3>
+                    <p>Experience improved urinary flow and reduced BPH symptoms with lasting results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Stories -->
+    <section id="stories" class="patient-stories fade-in-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Real Stories from Real Patients</h2>
+                <p class="section-subtitle">
+                    Hear from men who have experienced the Zenflow difference
+                </p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "I was amazed at how gentle the procedure was. I went in expecting discomfort, 
+                        but I barely felt anything. By evening, I was already noticing improvement."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Michael R.</h4>
+                            <p>Age 58, Arizona</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "After years of getting up multiple times each night, I finally sleep through the night. 
+                        The Zenflow procedure gave me my life back."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>David L.</h4>
+                            <p>Age 62, Florida</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "I researched all the BPH treatments available. Zenflow was the only one that 
+                        didn't involve cutting or burning. Best decision I ever made."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Robert K.</h4>
+                            <p>Age 55, California</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact" class="final-cta">
+        <div class="section-container">
+            <!-- Success Story Image -->
+            <div style="margin-bottom: 3rem;">
+                <img src="image/active-man.jpeg" alt="Active mature man hiking and enjoying life after successful BPH treatment with Zenflow" style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; box-shadow: var(--shadow-lg);">
+            </div>
+            
+            <h2>Ready to Take Care of It?</h2>
+            <p>Find a Zenflow-trained urologist near you and start your journey to better urinary health.</p>
+            <a href="#" class="btn-white">Find a Doctor Near You</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>For Patients</h3>
+                <p><a href="#">Find a Doctor</a></p>
+                <p><a href="#">Patient Resources</a></p>
+                <p><a href="#">Insurance Coverage</a></p>
+                <p><a href="#">FAQ</a></p>
+                <p><a href="#">Patient Stories</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>For Physicians</h3>
+                <p><a href="#">Clinical Data</a></p>
+                <p><a href="#">Training Program</a></p>
+                <p><a href="#">Physician Portal</a></p>
+                <p><a href="#">Request Information</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Company</h3>
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">Clinical Studies</a></p>
+                <p><a href="#">Press</a></p>
+                <p><a href="#">Careers</a></p>
+                <p><a href="#">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="#">1-800-ZENFLOW</a></p>
+                <p><a href="#">info@zenflow.com</a></p>
+                <p>Monday-Friday: 8AM-6PM PT</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" style="margin-right: 1rem;">📘 Facebook</a>
+                    <a href="#" style="margin-right: 1rem;">🐦 Twitter</a>
+                    <a href="#">💼 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zenflow, Inc. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Medical Disclaimers</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+                *Results from clinical trials. Individual results may vary. The Zenflow Spring System is a medical device. 
+                Please consult with your physician to determine if this treatment is right for you.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for scroll animations and interactions -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for fade-in animation
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add shadow when scrolled
+            if (scrollTop > 10) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Animate statistics counters
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const numericTarget = parseInt(target.replace(/\D/g, ''));
+                const suffix = target.replace(/[\d]/g, '');
+                
+                if (numericTarget && !counter.hasAttribute('data-animated')) {
+                    counter.setAttribute('data-animated', 'true');
+                    let current = 0;
+                    const increment = numericTarget / 50;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= numericTarget) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current) + suffix;
+                        }
+                    }, 30);
+                }
+            });
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.problem-stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Mobile menu toggle (for future implementation)
+        const createMobileMenu = () => {
+            const nav = document.querySelector('.nav-menu');
+            const navContainer = document.querySelector('.nav-container');
+            
+            // Create hamburger button
+            const hamburger = document.createElement('button');
+            hamburger.innerHTML = '☰';
+            hamburger.style.cssText = `
+                display: none;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: var(--zenflow-teal);
+                cursor: pointer;
+                padding: 0.5rem;
+            `;
+            
+            // Show hamburger on mobile
+            const mediaQuery = window.matchMedia('(max-width: 768px)');
+            const handleMediaQuery = (e) => {
+                if (e.matches) {
+                    hamburger.style.display = 'block';
+                    nav.style.display = 'none';
+                } else {
+                    hamburger.style.display = 'none';
+                    nav.style.display = 'flex';
+                }
+            };
+            
+            mediaQuery.addListener(handleMediaQuery);
+            handleMediaQuery(mediaQuery);
+            
+            navContainer.appendChild(hamburger);
+        };
+
+        // Initialize mobile menu
+        createMobileMenu();
+
+        // Add hover effects to cards
+        const addCardHoverEffects = () => {
+            const cards = document.querySelectorAll('.benefit-card, .step-card, .testimonial-card, .stat-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        };
+
+        // Initialize card hover effects
+        addCardHoverEffects();
+
+        // Form validation and submission (for future contact forms)
+        const initializeContactForm = () => {
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    const inputs = form.querySelectorAll('input[required], select[required]');
+                    let isValid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            input.style.borderColor = '#ef4444';
+                            isValid = false;
+                        } else {
+                            input.style.borderColor = 'var(--border-light)';
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show success message
+                        const successMessage = document.createElement('div');
+                        successMessage.innerHTML = `
+                            <div style="
+                                background: var(--zenflow-mint);
+                                color: var(--zenflow-blue);
+                                padding: 1rem;
+                                border-radius: 8px;
+                                margin-top: 1rem;
+                                text-align: center;
+                                font-weight: 600;
+                            ">
+                                Thank you! We'll be in touch soon.
+                            </div>
+                        `;
+                        form.appendChild(successMessage);
+                        
+                        // Reset form
+                        setTimeout(() => {
+                            form.reset();
+                            successMessage.remove();
+                        }, 3000);
+                    }
+                });
+            });
+        };
+
+        // Track user interactions for analytics
+        const trackInteractions = () => {
+            // Track CTA button clicks
+            document.querySelectorAll('.btn-primary, .btn-secondary, .btn-white, .cta-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const buttonText = e.target.textContent.trim();
+                    console.log(`CTA clicked: ${buttonText}`);
+                    
+                    // Here you would integrate with your analytics platform
+                    // gtag('event', 'cta_click', { button_text: buttonText });
+                });
+            });
+            
+            // Track section visibility
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id || entry.target.className;
+                        console.log(`Section viewed: ${sectionId}`);
+                        
+                        // Analytics tracking
+                        // gtag('event', 'section_view', { section: sectionId });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('section[id]').forEach(section => {
+                sectionObserver.observe(section);
+            });
+        };
+
+        // Initialize tracking
+        trackInteractions();
+
+        // Add loading animation for images
+        const initializeImageLoading = () => {
+            const imageContainers = document.querySelectorAll('[style*="background: var(--light-gray)"]');
+            
+            imageContainers.forEach(container => {
+                // Add a subtle pulse animation to placeholder images
+                container.style.animation = 'pulse 2s infinite';
+            });
+            
+            // Add pulse animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.7; }
+                }
+            `;
+            document.head.appendChild(style);
+        };
+
+        // Initialize image loading effects
+        initializeImageLoading();
+
+        // Accessibility improvements
+        const improveAccessibility = () => {
+            // Add keyboard navigation for custom elements
+            document.querySelectorAll('.benefit-card, .step-card, .testimonial-card').forEach(card => {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'article');
+                
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        card.click();
+                    }
+                });
+            });
+            
+            // Add ARIA labels for better screen reader support
+            const ctaButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
+            ctaButtons.forEach(button => {
+                if (!button.getAttribute('aria-label')) {
+                    button.setAttribute('aria-label', button.textContent + ' - Opens contact form');
+                }
+            });
+        };
+
+        // Initialize accessibility improvements
+        improveAccessibility();
+
+        // Page load performance optimization
+        window.addEventListener('load', () => {
+            // Remove any loading states
+            document.body.classList.add('loaded');
+            
+            // Preload critical images (when you have real images)
+            const criticalImages = [
+                // Add your actual image URLs here
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+
+        console.log('Zenflow DTC website initialized successfully! 🚀');
+    </script>
+
+    <!-- Additional CSS for enhanced interactions -->
+    <style>
+        /* Loading state */
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        /* Enhanced button hover effects */
+        .btn-primary,
+        .btn-secondary,
+        .btn-white {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before,
+        .btn-secondary::before,
+        .btn-white::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before,
+        .btn-secondary:hover::before,
+        .btn-white:hover::before {
+            left: 100%;
+        }
+
+        /* Focus states for accessibility */
+        .btn-primary:focus,
+        .btn-secondary:focus,
+        .btn-white:focus,
+        .cta-button:focus {
+            outline: 2px solid var(--zenflow-teal);
+            outline-offset: 2px;
+        }
+
+        /* Enhanced card interactions */
+        .benefit-card,
+        .step-card,
+        .testimonial-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .benefit-card:focus,
+        .step-card:focus,
+        .testimonial-card:focus {
+            outline: 2px solid var(--zenflow-teal);
+            outline-offset: 2px;
+        }
+
+        /* Parallax effect for hero background */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 192, 239, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(60, 141, 188, 0.1) 0%, transparent 50%);
+            animation: float-background 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float-background {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(2deg) scale(1.05); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--zenflow-teal);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--zenflow-blue);
+        }
+
+        /* Print styles */
+        @media print {
+            .header,
+            .final-cta,
+            .footer {
+                display: none;
+            }
+            
+            .hero {
+                page-break-after: always;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</body>
+</html>
